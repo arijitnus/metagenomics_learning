@@ -1,1 +1,30 @@
+The workflow consists of the following steps in brief: 
+
+Metagenome assembly: From reads to contigs to MAGs and downstream analyses of MAGs
+
+1. Trim raw reads for low-quality regions
+2. Assembling into contigs
+3. Read containment of contigs 
+3. From contigs to bins (Metabat2, Maxbin2 and CONCOCT)
+4. DAStools for non-redundant set of bins
+5. refineM and MAGpurify for removing contaminating contigs
+6. checkM for estimating the quality of bins
+7. Inferring pathways and functional potential of MAGs
+
+
+
+Functional annotation of metagenomes: (Inference from contigs)
+
+1. Inferring functional potential using KEGG, COG , CaZymes and antiSMASH
+2. Parsing individual metagenomes into matrix for downstreama analyses
+3. Statistical analyses for inferring functional enrichment/depletion and ordination
+4. Visualization to show patterns among groups
+5. Pathway visualization for biological knowledge extraction
+
+
+
+
+
+
+
 
