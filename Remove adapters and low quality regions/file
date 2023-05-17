@@ -1,1 +1,15 @@
+#Remove adapters using cutadapt tool (Only if you have adapters in your reads)
+#Cutadapt installation:
+#Run cutadapt:
+
+
+
+
+
+#Remove low-quality regions using bbmap tool  
+
+#Install bbmap from anaconda into your miniconda env. 
+#Simple steps to follow for creating a conda environment in bash scripting:
+#conda install -c bioconda bbmap 
+
 
