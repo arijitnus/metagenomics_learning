@@ -11,3 +11,7 @@ https://cutadapt.readthedocs.io/en/stable/guide.html#adapter-types (follow this)
 #run bbmap: The following command cuts the low quality regions (Q<20) from both ends of the reads of a minimum length of region 7 bases
 bbduk.sh in= outread_1.fastq.gz in2= outread_2.fastq.gz out1=clean_1.fq out2=clean_2.fq trimq=20 qtrim=rl minlen=7
 
+#Now visualise the quality trimmed reads for each of the samples
+module load fastqc  #If you have the fastqc module installed, otherwise follow conda installation
+Fastqc *.fastq.gz #create .html fastqc reports for all the .fastq.gz files
+
