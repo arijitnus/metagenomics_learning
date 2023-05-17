@@ -1,5 +1,5 @@
 #Remove adapters using cutadapt tool (Only if you have adapters in your reads)
-#Cutadapt installation:
+#Cutadapt installation (from bioconda): conda install -c bioconda cutadapt
 #Run cutadapt:
 
 
