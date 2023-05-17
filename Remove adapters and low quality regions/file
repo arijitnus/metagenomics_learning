@@ -1,15 +1,13 @@
 #Remove adapters using cutadapt tool (Only if you have adapters in your reads)
-#Cutadapt installation (from bioconda): conda install -c bioconda cutadapt
+#Cutadapt installation (from bioconda): conda install -c bioconda cutadapt (Always install a new package in a separate environment)
 #Run cutadapt:
-
-
-
-
+https://cutadapt.readthedocs.io/en/stable/guide.html#adapter-types (follow this)
 
 #Remove low-quality regions using bbmap tool  
 
 #Install bbmap from anaconda into your miniconda env. 
 #Simple steps to follow for creating a conda environment in bash scripting:
 #conda install -c bioconda bbmap 
-
+#run bbmap: The following command cuts the low quality regions (Q<20) from both ends of the reads of a minimum length of region 7 bases
+bbduk.sh in= outread_1.fastq.gz in2= outread_2.fastq.gz out1=clean_1.fq out2=clean_2.fq trimq=20 qtrim=rl minlen=7
 
