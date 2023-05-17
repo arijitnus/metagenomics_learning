@@ -1,1 +1,21 @@
+#Following cleaning of your raw reads, they are ready to be assembled into contigs:
+#There are two main ways to assemble reads into contigs
+#co-assembly (all samples into one) and individual samples (one for each of the samples) assembly 
+#co-assembly:
+#Need to create interleaved files from paired end reads
+Code:
+\\#!/bin/bash
+bash
+. ~/.bashrc
+bash interleave_fastq.sh cleaned_sample1_1.fq cleaned_sample1_2.fq > int_sample1.fq 
 
+#The interleave_fastq.sh is attached in this folder, which you can use to create interleaved files from paired end reads.
+
+#The following command assembles all files using megahit from all the interleaved files:
+megahit --12 sample1.fq, sample2.fq, sample3.fq --k-min 27 --k-max 197 --k-step 10 –min_contigs_len 1000 -t 10 
+
+#Here the above --12 command inputs all the interleaved files together for assembly. --k-min, max and step indicates the k-mer approach for assembling into contigs and 
+#Contigs with only length > 1000 shall be retained with 10 threads on the CPU. Changes can be included as desired by the user.
+
+###Individual assembly:
+megahit -1 cleaned_sample1_1.fq -2 cleaned_sample1_2.fq --k-min 27 --k-max 197 --k-step 10 –min_contigs_len 1000 -t 10
